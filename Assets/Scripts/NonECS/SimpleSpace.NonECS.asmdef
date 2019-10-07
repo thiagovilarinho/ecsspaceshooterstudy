@@ -1,0 +1,15 @@
+{
+    "name": "SimpleSpace.NonECS",
+    "references": [
+        "GUID:b8007b770cd76594688cdf37d200effc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
