@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using SimpleSpace.Core;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace SimpleSpace.NonECS
 {
@@ -6,6 +8,9 @@ namespace SimpleSpace.NonECS
     {
         [SerializeField]
         private float _startLife = 150;
+
+        [SerializeField]
+        private int _myPoints = 50;
 
         [SerializeField]
         private float _damageAmmount = 15;
@@ -29,6 +34,11 @@ namespace SimpleSpace.NonECS
         {
             _life -= ammount;
 
+            if(_isPlayer)
+            {
+                GameManager.instance.SendHealth(_life);
+            }
+
             if(_life <= 0)
             {
                 Death();
@@ -37,8 +47,15 @@ namespace SimpleSpace.NonECS
 
         public void Death()
         {
-            //Destroy(gameObject);
-           gameObject.SetActive(false);
+            if(_isPlayer)
+            {
+                GameManager.instance.PlayerDead();
+                Addressables.ReleaseInstance(gameObject);
+            }else
+            {
+                GameManager.instance.SetScore(_myPoints);
+                PoolManager.instance.ReturnToPool(gameObject);
+            }
         }
 
 

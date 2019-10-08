@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SimpleSpace
+namespace SimpleSpace.Core
 {
     public struct ScreenBoundary
     {

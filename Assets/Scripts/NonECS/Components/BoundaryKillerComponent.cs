@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using SimpleSpace.Core;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,9 +7,11 @@ namespace SimpleSpace.NonECS
 {
     public class BoundaryKillerComponent : MonoBehaviour
     {
-        private Transform _transform = default(Transform);
 
-        private float _screenBound = 0;
+        [SerializeField]
+        private float _limitMultiplier = 1;
+
+        private Transform _transform = default(Transform);
 
         private ScreenBoundary _boundaries = new ScreenBoundary();
         // Start is called before the first frame update
@@ -18,15 +21,15 @@ namespace SimpleSpace.NonECS
 
             _boundaries.Initialize();
 
-            _screenBound = _boundaries.GetBoundaries();
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (_boundaries.TouchBound(_transform.position.x))
+            if (_boundaries.TouchBound(_transform.position.x * _limitMultiplier))
             {
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
+                PoolManager.instance.ReturnToPool(gameObject);
             }
         }
     }

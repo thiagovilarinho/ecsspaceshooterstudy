@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 4826776584706194274}
   - component: {fileID: 6865912255911157582}
   - component: {fileID: 405181299}
+  - component: {fileID: 2649047155183587932}
   m_Layer: 0
   m_Name: CommonMeteor
   m_TagString: Enemy
@@ -174,7 +175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startLife: 150
-  _damageAmmount: 15
+  _myPoints: 50
+  _damageAmmount: 49.98
+  _isPlayer: 0
 --- !u!135 &4826776584706194274
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -200,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72be0050a551a7949ac0af62809f08ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _limitMultiplier: 0.5
 --- !u!54 &405181299
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -216,3 +220,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2649047155183587932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6359468328316984221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688af33cd8f4b5f4eb14f5351c8fc068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 15

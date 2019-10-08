@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using SimpleSpace.Core;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,10 @@ namespace SimpleSpace.NonECS
     {
         [SerializeField]
         private int _interval = 3;
+
+        [SerializeField]
+        private GameObject _bullet = default(GameObject);
+
         private Transform _cannonPivot = default(Transform);
 
         private void Start()
@@ -28,8 +33,8 @@ namespace SimpleSpace.NonECS
 
         private void Shoot()
         {
-            var tempBullet = SimpleBulletPool.instance.GetGameObject();
-            tempBullet.SetActive(true);
+            var tempBullet = PoolManager.instance.TryPool(_bullet);
+            //tempBullet.SetActive(true);
             tempBullet.transform.position = _cannonPivot.position;
         }
     }

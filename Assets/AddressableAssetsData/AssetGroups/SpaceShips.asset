@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: SpaceShips
+  m_EditorClassIdentifier: 
+  m_GroupName: SpaceShips
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 6c6616dfbce59d2419059bf78bc68514
+  m_SerializeEntries:
+  - m_GUID: 5143dc24932f6ee4190782ed461123c1
+    m_Address: SimpleShip
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Ship
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: fa0b5d3c0c499a34ab2aeab2ff27e602, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: cc6cdacccb77714429467704f3a282ba, type: 2}
+    - {fileID: 11400000, guid: b47f7962e2bc4af469ee0b8574ddfbc6, type: 2}
