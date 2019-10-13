@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startLife: 150
   _myPoints: 50
-  _damageAmmount: 49.98
+  _damageAmmount: 50
   _isPlayer: 0
 --- !u!135 &4826776584706194274
 SphereCollider:

@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5397195049356669362}
   m_Layer: 0
   m_Name: SimpleBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72be0050a551a7949ac0af62809f08ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _limitMultiplier: 1
 --- !u!114 &3085186153333388716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a55821828dd1143902a3ce5ce3d055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLife: 150
+  _startLife: 0
+  _myPoints: 50
   _damageAmmount: 27.54
   _isPlayer: 0
 --- !u!136 &4911987733199424310

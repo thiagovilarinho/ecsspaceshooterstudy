@@ -17,12 +17,24 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: c80deb02bddb4764194d7d0a3955bed8
   m_SerializeEntries:
+  - m_GUID: 11dbfc9322ba3204785c8e028f6ccbb3
+    m_Address: Assets/Data/CommonMeteorData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   - m_GUID: 6e569033a499e3642a62f799e48dae8d
     m_Address: SimpleBullet
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 9bb60fa98edfff34d808149d42ce7f91
+    m_Address: Assets/Data/SimpleBulletData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   - m_GUID: d116a682415a4b74b9db6241505021c9
     m_Address: CommonMeteor
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f5bdb7293e41f0f41a8be22682423229
+    m_Address: Assets/Data/Ships/SimpleShipData.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

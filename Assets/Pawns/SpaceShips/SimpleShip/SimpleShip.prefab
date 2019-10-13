@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interval: 5
-  _bullet: {fileID: 0}
+  _bulletData:
+    m_AssetGUID: 
 --- !u!1 &1872351713
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interval: 5
-  _bullet: {fileID: 0}
+  _bulletData:
+    m_AssetGUID: 
 --- !u!1 &2649744599534396282
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interval: 5
-  _bullet: {fileID: 5073315074516191766, guid: 6e569033a499e3642a62f799e48dae8d, type: 3}
+  _bulletData:
+    m_AssetGUID: 9bb60fa98edfff34d808149d42ce7f91
 --- !u!1 &5154489853501297936
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,8 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a55821828dd1143902a3ce5ce3d055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLife: 150
-  _damageAmmount: 15
+  _pawnData: {fileID: 0}
   _isPlayer: 1
 --- !u!136 &5895303074306790335
 CapsuleCollider:

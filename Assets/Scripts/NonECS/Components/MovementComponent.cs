@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using SimpleSpace.Core;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,13 +30,19 @@ namespace SimpleSpace.NonECS
         // Update is called once per frame
         void Update()
         {
-            if (isPlayer)
+            if(GameManager.instance.gameState.Equals(GameStates.Running))
             {
-                Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
-            }
-            else
+                if (isPlayer)
+                {
+                    Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
+                }
+                else
+                {
+                    Move(_nonInputMovDir);
+                }
+            }else if(!rigidyBody.IsSleeping())
             {
-                Move(_nonInputMovDir);
+                rigidyBody.Sleep();
             }
         }
 
