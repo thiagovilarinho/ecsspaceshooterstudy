@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5ce95ea6bb3dd4295ea93750b73e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interval: 5
+  _interval: 30
   _bulletData:
     m_AssetGUID: 9bb60fa98edfff34d808149d42ce7f91
 --- !u!1 &5154489853501297936
@@ -249,8 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a55821828dd1143902a3ce5ce3d055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pawnData: {fileID: 0}
   _isPlayer: 1
+  _deathFx: {fileID: 0}
 --- !u!136 &5895303074306790335
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -46,13 +46,9 @@ namespace SimpleSpace.Core
         }
         public void StartGame()
         {
-            //_loadedData.Pawn.InstantiateAsync().Completed += op =>
-            
-            {
-                var damageableData = Instantiate(_loadedData.Pawn).GetComponent<DamageableComponent>();
-                damageableData.Data = _loadedData;
-                damageableData.Initialize();
-            };
+            var damageableData = Instantiate(_loadedData.Pawn).GetComponent<DamageableComponent>();
+            damageableData.Data = _loadedData;
+            damageableData.Initialize();
 
             gameState = GameStates.Running;
         }
@@ -82,6 +78,7 @@ namespace SimpleSpace.Core
         public void PlayerDead()
         {
             gameState = GameStates.Ended;
+
             gameOverWindow?.Open();
 
             PlayerIsDead?.Invoke();

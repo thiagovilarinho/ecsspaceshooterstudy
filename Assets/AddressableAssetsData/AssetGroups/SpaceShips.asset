@@ -22,6 +22,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Ship
+  - m_GUID: 6e569033a499e3642a62f799e48dae8d
+    m_Address: SimpleBullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9bb60fa98edfff34d808149d42ce7f91
+    m_Address: SimpleBulletData
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f5bdb7293e41f0f41a8be22682423229
+    m_Address: SimpleShipData
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fa0b5d3c0c499a34ab2aeab2ff27e602, type: 2}
   m_SchemaSet:

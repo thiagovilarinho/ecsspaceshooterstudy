@@ -23,6 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8bd333c912a1f434d94296ac3e661b25, type: 2}
   - {fileID: 11400000, guid: 90449c8b324b6094dad00a752ee945af, type: 2}
   - {fileID: 11400000, guid: 934323d6ddad6714d8bdc204514a32e1, type: 2}
+  - {fileID: 11400000, guid: f5d8ec09c7c7d6744baf2954606bd24f, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -65,6 +66,7 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - Ship
+    - Meteor
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: e4a6bfec80e850e41b270d8578a3b84c, type: 2}

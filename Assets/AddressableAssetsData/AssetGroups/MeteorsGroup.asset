@@ -10,24 +10,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: MeteorsGroup
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: MeteorsGroup
   m_Data:
     m_SerializedData: []
-  m_GUID: c80deb02bddb4764194d7d0a3955bed8
+  m_GUID: ce67a7b6e744ebe48b66a361b0e16819
   m_SerializeEntries:
-  - m_GUID: 05c2feeb0a4caea43b0b9877bdceb0c7
-    m_Address: BigExplosion_vfx
+  - m_GUID: 11dbfc9322ba3204785c8e028f6ccbb3
+    m_Address: CommonMeteorData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Meteor
+  - m_GUID: 3b7bc353980d9624293f75384335d10a
+    m_Address: FasterMeteor
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 4863840b2f34ea146a20051d20614490
-    m_Address: LightExplosion_vfx
+  - m_GUID: c2a5228f5db80c0459fde475cf4fe866
+    m_Address: FasterMeteorData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Meteor
+  - m_GUID: d116a682415a4b74b9db6241505021c9
+    m_Address: CommonMeteor
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fa0b5d3c0c499a34ab2aeab2ff27e602, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 068b1f178a34fd44c873a064fe410ec7, type: 2}
-    - {fileID: 11400000, guid: b4f0701430d73b14385efb6e7a5447c0, type: 2}
+    - {fileID: 11400000, guid: 479cc88d020128446983c10d4eceea18, type: 2}
+    - {fileID: 11400000, guid: d0783c1a0a52e314a83c005697681a37, type: 2}

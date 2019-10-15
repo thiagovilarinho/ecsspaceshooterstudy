@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5073315074516191766
+--- !u!1 &3275543683749730467
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5073315074516191764}
-  - component: {fileID: 901944890966519161}
-  - component: {fileID: 4469712542903423816}
-  - component: {fileID: 3167808363399905666}
-  - component: {fileID: 3085186153333388716}
-  - component: {fileID: 694938338}
-  - component: {fileID: 4911987733199424310}
-  - component: {fileID: 2067732638495998820}
-  - component: {fileID: 5397195049356669362}
+  - component: {fileID: 1536211723460133911}
+  - component: {fileID: 6439063563555997178}
+  - component: {fileID: 2297064181107728676}
   m_Layer: 0
-  m_Name: SimpleBullet
-  m_TagString: Bullet
+  m_Name: bullet_fx
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5073315074516191764
+--- !u!4 &1536211723460133911
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5073315074516191766}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6734063, y: 0.008418736, z: -0.88475484}
-  m_LocalScale: {x: 1.7782068, y: 0.49908835, z: 0.42843857}
+  m_GameObject: {fileID: 3275543683749730467}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.0723, y: 0, z: 0}
+  m_LocalScale: {x: 1.2639043, y: 2.8851767, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 5073315074516191764}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &901944890966519161
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!33 &6439063563555997178
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275543683749730467}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2297064181107728676
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5073315074516191766}
+  m_GameObject: {fileID: 3275543683749730467}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -77,14 +79,43 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &4469712542903423816
-MeshFilter:
+--- !u!1 &5073315074516191766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5073315074516191764}
+  - component: {fileID: 3167808363399905666}
+  - component: {fileID: 3085186153333388716}
+  - component: {fileID: 694938338}
+  - component: {fileID: 4911987733199424310}
+  - component: {fileID: 2067732638495998820}
+  - component: {fileID: 5397195049356669362}
+  m_Layer: 0
+  m_Name: SimpleBullet
+  m_TagString: Bullet
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5073315074516191764
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5073315074516191766}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.7782068, y: 0.49908835, z: 0.42843857}
+  m_Children:
+  - {fileID: 1536211723460133911}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3167808363399905666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b007622228b9e4d9e11c823a02ead9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _speed: 0.6
   _nonInputMovDir: {x: 1, y: 0}
   isPlayer: 0
 --- !u!114 &694938338
@@ -125,10 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a55821828dd1143902a3ce5ce3d055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLife: 0
-  _myPoints: 50
-  _damageAmmount: 27.54
   _isPlayer: 0
+  _deathFx: {fileID: 618768033832787368, guid: 4863840b2f34ea146a20051d20614490, type: 3}
 --- !u!136 &4911987733199424310
 CapsuleCollider:
   m_ObjectHideFlags: 0

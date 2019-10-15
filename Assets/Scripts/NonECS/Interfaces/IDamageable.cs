@@ -4,8 +4,7 @@
     {
         void Initialize();
         void ApplyDamage(float ammount);
-        void Death();
-        void InstaKill();
+        void Death(bool countScore = false);
     }
 
 }

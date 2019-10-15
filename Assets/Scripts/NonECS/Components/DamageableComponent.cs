@@ -7,10 +7,13 @@ namespace SimpleSpace.NonECS
 {
     public class DamageableComponent : MonoBehaviour, IDamageable
     { 
-        public PawnData _pawnData = null;
-
         [SerializeField]
         private bool _isPlayer = false;
+
+        [SerializeField]
+        private GameObject _deathFx = null;
+
+        private PawnData _pawnData = null;
 
         private float _life = 0;
 
@@ -27,6 +30,7 @@ namespace SimpleSpace.NonECS
         {
             Initialize();
         }
+
         public void Initialize()
         {
             if(_pawnData == null)
@@ -36,6 +40,7 @@ namespace SimpleSpace.NonECS
 
             _life = _pawnData.Life;
         }
+
         public void ApplyDamage(float ammount)
         {
             _life -= ammount;
@@ -47,11 +52,18 @@ namespace SimpleSpace.NonECS
 
             if(_life <= 0)
             {
-                Death();
+                Death(true);
             }
         }
-        public void Death()
+
+        public void Death(bool countScore = false)
         {
+            if(_deathFx)
+            {
+                PoolManager.instance.TryPool(_deathFx).
+                                    transform.position = transform.position;
+            }
+
             if(_isPlayer)
             {
                 GameManager.instance.PlayerDead();
@@ -59,14 +71,14 @@ namespace SimpleSpace.NonECS
             }
             else
             {
-                GameManager.instance.SetScore(_pawnData.ScorePoint);
+                if(countScore)
+                {
+                    GameManager.instance.SetScore(_pawnData.ScorePoint);
+                }
+
                 PoolManager.instance.ReturnToPool(gameObject);
             }
-        }
 
-        public void InstaKill()
-        {
-            PoolManager.instance.ReturnToPool(gameObject);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -74,19 +86,14 @@ namespace SimpleSpace.NonECS
             if(other.CompareTag(ConstantValues.playerTag))
             {
                 other.GetComponent<IDamageable>().ApplyDamage(_pawnData.DamageAmmount);
-                InstaKill();
+                Death();
             }
 
             if (other.CompareTag(ConstantValues.enemyTag) && !_isPlayer)
             {
                 other.GetComponent<IDamageable>().ApplyDamage(_pawnData.DamageAmmount);
-                InstaKill();
+                Death();
             }
-        }
-
-        private void OnDisable()
-        {
-            Initialize();
         }
     }
 }

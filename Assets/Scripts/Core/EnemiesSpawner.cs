@@ -13,26 +13,30 @@ namespace SimpleSpace.Core
         private int _spawnInterval = 30;
 
         [SerializeField]
-        private AssetReference _enemyData = null;
+        private string _enemieLabel = "Meteors";
 
         [SerializeField]
         private Transform[] _spawnPoints = default(Transform[]);
 
-        private PawnData _loadedData = null;
-
         private bool _dataLoaded = false;
 
+        private List<PawnData> _enemiesData = new List<PawnData>();
 
+        private int _randomResult = 0;
 
         private void Awake()
         {
-            _enemyData.LoadAssetAsync<PawnData>().Completed += op =>
-            {
-                _loadedData = op.Result;
+            Addressables.LoadAssetsAsync<PawnData>(_enemieLabel, op =>
+             {
+                 _enemiesData.Add(op);
+                 _dataLoaded = op;
+             });
 
-                _dataLoaded = op.IsDone;
-                
-            };
+            //_enemyData.LoadAssetAsync<PawnData>().Completed += op =>
+            //{
+            //    _loadedData = op.Result;
+            //    _dataLoaded = op.IsDone;
+            //};
 
         }
         void Update()
@@ -44,16 +48,14 @@ namespace SimpleSpace.Core
 
             if(Time.frameCount % _spawnInterval == 0)
             {
-                var tempEnemy =  PoolManager.instance.TryGetPool<DamageableComponent>(_loadedData.Pawn);
+                var tempEnemy =  PoolManager.instance.TryGetPool<DamageableComponent>(_enemiesData[_randomResult].Pawn);
                 tempEnemy.transform.position = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
-                tempEnemy.Data = _loadedData;
+                tempEnemy.Data = _enemiesData[_randomResult];
+
+                _randomResult = Random.Range(0, _enemiesData.Count);
+
                 tempEnemy.Initialize();
             }
-        }
-
-        private void OnDestroy()
-        {
-            _enemyData.ReleaseAsset();
         }
     }
 }
