@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10cbd868de77b0a44bcfc420f657dfe9, type: 3}
-  m_Name: SimpleShipData
+  m_Script: {fileID: 11500000, guid: ab2114bdc8544297b417dfefe9f1e410, type: 3}
+  m_Name: TMP StyleSheet
   m_EditorClassIdentifier: 
-  Pawn: {fileID: 5154489853501297936, guid: 5143dc24932f6ee4190782ed461123c1, type: 3}
-  Life: 150
-  Weapon: {fileID: 11400000, guid: 83a398542a7dd8b4a95b7317e20de360, type: 2}
+  m_StyleList: []

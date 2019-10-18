@@ -5,9 +5,13 @@ using UnityEngine;
 namespace SimpleSpace.Data
 {
     [CreateAssetMenu(fileName = "PawnData", menuName = "SimpleSpace/PawnData", order = 1)]
-    public class PawnData : BasePawnData
+    public class PawnData : ShipData
     {
-        public float Life;
         public int ScorePoint;
+
+        public override int GetScore()
+        {
+            return ScorePoint;
+        }
     }
 }

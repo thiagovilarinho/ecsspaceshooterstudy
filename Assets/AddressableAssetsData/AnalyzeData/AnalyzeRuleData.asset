@@ -14,10 +14,87 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RuleToResults:
   - RuleName: Check Duplicate Bundle Dependencies
-    Results: []
+    Results:
+    - m_ResultName: No issues found
+      m_Severity: 0
   - RuleName: Check Resources to Addressable Duplicate Dependencies
-    Results: []
+    Results:
+    - m_ResultName: Check Resources to Addressable Duplicate Dependencies - No issues
+        found.
+      m_Severity: 0
   - RuleName: Check Scene to Addressable Duplicate Dependencies
-    Results: []
+    Results:
+    - m_ResultName: Check Scene to Addressable Duplicate Dependencies - No issues
+        found.
+      m_Severity: 0
   - RuleName: Build Bundle Layout
-    Results: []
+    Results:
+    - m_ResultName: defaultlocalgroup_assets_all.bundle:Explicit:Assets/VFXs/BigExplosion_vfx.prefab
+      m_Severity: 0
+    - m_ResultName: defaultlocalgroup_assets_all.bundle:Explicit:Assets/VFXs/LightExplosion_vfx.prefab
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Explicit:Assets/Pawns/SpaceShips/SimpleShip/SimpleShip.prefab
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Explicit:Assets/Props/Bullets/SimpleBullet/SimpleBullet.prefab
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Explicit:Assets/Data/Ships/SimpleShipData.asset
+      m_Severity: 0
+    - m_ResultName: meteorsgroup_assets_all.bundle:Explicit:Assets/Data/Enemies/CommonMeteorData.asset
+      m_Severity: 0
+    - m_ResultName: meteorsgroup_assets_all.bundle:Explicit:Assets/Pawns/Meteors/FasterMeteor/FasterMeteor.prefab
+      m_Severity: 0
+    - m_ResultName: meteorsgroup_assets_all.bundle:Explicit:Assets/Data/Enemies/FasterMeteorData.asset
+      m_Severity: 0
+    - m_ResultName: meteorsgroup_assets_all.bundle:Explicit:Assets/Pawns/Meteors/CommonMeteor/CommonMeteor.prefab
+      m_Severity: 0
+    - m_ResultName: cannons_assets_all.bundle:Explicit:Assets/Props/Cannons/SimpleCannon.prefab
+      m_Severity: 0
+    - m_ResultName: defaultlocalgroup_assets_all.bundle:Implicit:Assets/VFXs/Materials/simple_explosion_mat.mat
+      m_Severity: 0
+    - m_ResultName: defaultlocalgroup_assets_all.bundle:Implicit:Packages/com.unity.render-pipelines.universal/Shaders/Particles/ParticlesUnlit.shader
+      m_Severity: 0
+    - m_ResultName: defaultlocalgroup_assets_all.bundle:Implicit:Assets/ECS_Example/VFX
+        (Shared)/Textures/Glow_04.png
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Implicit:Assets/Pawns/SpaceShips/SimpleShip/SpaceShipMaterial.mat
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Implicit:Assets/Shaders/MatcapShader.shadergraph
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Implicit:Assets/Pawns/SpaceShips/_Shared/Glass.mat
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Implicit:Assets/Textures/Matcaps/matcap_test2.png
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Implicit:Assets/Pawns/SpaceShips/SimpleShip/model_simpleShip.fbx
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Implicit:Assets/Pawns/SpaceShips/SimpleShip/model_simpleShip.fbx
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Implicit:Assets/Pawns/SpaceShips/SimpleShip/model_simpleShip.fbx
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Implicit:Assets/Pawns/SpaceShips/SimpleShip/model_simpleShip.fbx
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Implicit:Assets/Pawns/SpaceShips/SimpleShip/model_simpleShip.fbx
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Implicit:Assets/Textures/Matcaps/matGlass.tif
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Implicit:Assets/Props/Bullets/SimpleBullet/SimpleBullet_mat.mat
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Implicit:Assets/ECS_Example/Models/Bullet/Textures/BulletTexture.png
+      m_Severity: 0
+    - m_ResultName: spaceships_assets_all.bundle:Implicit:Assets/Data/Weapons/SimpleBullet.asset
+      m_Severity: 0
+    - m_ResultName: meteorsgroup_assets_all.bundle:Implicit:Assets/Shaders/MatcapShader.shadergraph
+      m_Severity: 0
+    - m_ResultName: meteorsgroup_assets_all.bundle:Implicit:Assets/Pawns/Meteors/FasterMeteor/FasterMeteor_mat.mat
+      m_Severity: 0
+    - m_ResultName: meteorsgroup_assets_all.bundle:Implicit:Assets/Textures/Matcaps/matcap_test.jpg
+      m_Severity: 0
+    - m_ResultName: meteorsgroup_assets_all.bundle:Implicit:Assets/Pawns/Meteors/CommonMeteor/CommonMeteor_mat.mat
+      m_Severity: 0
+    - m_ResultName: meteorsgroup_assets_all.bundle:Implicit:Assets/Textures/Matcaps/matcap_test3.jpg
+      m_Severity: 0
+    - m_ResultName: cannons_assets_all.bundle:Implicit:Assets/Shaders/MatcapShader.shadergraph
+      m_Severity: 0
+    - m_ResultName: cannons_assets_all.bundle:Implicit:Assets/Textures/Matcaps/matcap_test2.png
+      m_Severity: 0
+    - m_ResultName: cannons_assets_all.bundle:Implicit:Assets/Props/Cannons/SimpleCannon_mat.mat
+      m_Severity: 0

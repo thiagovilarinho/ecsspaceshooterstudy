@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using SimpleSpace.NonECS;
 using UnityEngine.SceneManagement;
 using SimpleSpace.UI;
 using SimpleSpace.Data;
+using SimpleSpace.NonECS;
 
 namespace SimpleSpace.Core
 {
@@ -26,29 +24,36 @@ namespace SimpleSpace.Core
         private int _score = 0;
 
         private GameObject _cacheShip;
-        private PawnData _loadedData = null;
+        private ShipData _loadedData = null;
 
         // Start is called before the first frame update
         protected override void Awake()
         {
             base.Awake();
             
-            spaceShipData.LoadAssetAsync<PawnData>().Completed += op =>
+            spaceShipData.LoadAssetAsync<ShipData>().Completed += op =>
             {
                 _loadedData = op.Result;
                 SetHealth(_loadedData.Life);
             };
         }
+
         private void Start()
         {
             SetHealth(0);
             SetScore(0);
         }
+
         public void StartGame()
         {
             var damageableData = Instantiate(_loadedData.Pawn).GetComponent<DamageableComponent>();
+            var shootingComponent = damageableData.GetComponentInChildren<ShootingComponent>();
+
             damageableData.Data = _loadedData;
             damageableData.Initialize();
+
+            shootingComponent.Data = _loadedData.Weapon;
+            shootingComponent.Initialize();
 
             gameState = GameStates.Running;
         }
@@ -61,6 +66,7 @@ namespace SimpleSpace.Core
             }
 
             _score += score;
+
             UpdateScore?.Invoke(_score.ToString());
         }
 

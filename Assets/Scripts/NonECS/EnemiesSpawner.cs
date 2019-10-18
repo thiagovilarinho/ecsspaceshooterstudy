@@ -1,11 +1,10 @@
-﻿using SimpleSpace.Data;
-using SimpleSpace.NonECS;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using SimpleSpace.Core;
+using SimpleSpace.Data;
 
-namespace SimpleSpace.Core
+namespace SimpleSpace.NonECS
 {
     public class EnemiesSpawner : MonoBehaviour
     {
@@ -31,14 +30,8 @@ namespace SimpleSpace.Core
                  _enemiesData.Add(op);
                  _dataLoaded = op;
              });
-
-            //_enemyData.LoadAssetAsync<PawnData>().Completed += op =>
-            //{
-            //    _loadedData = op.Result;
-            //    _dataLoaded = op.IsDone;
-            //};
-
         }
+
         void Update()
         {
             if(GameManager.instance.gameState == GameStates.Ended && !_dataLoaded)
@@ -48,8 +41,8 @@ namespace SimpleSpace.Core
 
             if(Time.frameCount % _spawnInterval == 0)
             {
-                var tempEnemy =  PoolManager.instance.TryGetPool<DamageableComponent>(_enemiesData[_randomResult].Pawn);
-                tempEnemy.transform.position = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
+                var tempEnemy =  PoolManager.instance.TryGetPool<IDamageable>(_enemiesData[_randomResult].Pawn);
+                tempEnemy.GetTransform.position = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
                 tempEnemy.Data = _enemiesData[_randomResult];
 
                 _randomResult = Random.Range(0, _enemiesData.Count);

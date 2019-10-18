@@ -43,9 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5ce95ea6bb3dd4295ea93750b73e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interval: 5
-  _bulletData:
-    m_AssetGUID: 
 --- !u!1 &1872351713
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,9 +86,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5ce95ea6bb3dd4295ea93750b73e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interval: 5
-  _bulletData:
-    m_AssetGUID: 
 --- !u!1 &2649744599534396282
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8347788390524625109}
-  - component: {fileID: 1595355680}
+  - component: {fileID: 7406128896029452922}
   m_Layer: 0
   m_Name: CannonPivot
   m_TagString: Untagged
@@ -150,14 +144,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3656057117559705342}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.99, y: 0, z: 0}
+  m_LocalRotation: {x: -0.43195373, y: 0.0155945, z: 0.032534383, w: 0.9011739}
+  m_LocalPosition: {x: 2.12, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2510205510035917352}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1595355680
+  m_LocalEulerAnglesHint: {x: -51.219, y: 0, z: 4.135}
+--- !u!114 &7406128896029452922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,9 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5ce95ea6bb3dd4295ea93750b73e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interval: 30
-  _bulletData:
-    m_AssetGUID: 9bb60fa98edfff34d808149d42ce7f91
 --- !u!1 &5154489853501297936
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +279,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2510205510035917352}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 147407fc566122340a0e00c6510f3ee5,
+        type: 3}
+      propertyPath: m_Name
+      value: model_simpleShip
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 147407fc566122340a0e00c6510f3ee5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -342,11 +338,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 147407fc566122340a0e00c6510f3ee5,
-        type: 3}
-      propertyPath: m_Name
-      value: model_simpleShip
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 147407fc566122340a0e00c6510f3ee5,
         type: 3}

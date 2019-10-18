@@ -1783,7 +1783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: 0
   spaceShipData:
-    m_AssetGUID: f5bdb7293e41f0f41a8be22682423229
+    m_AssetGUID: 00420bb5cd25eac4fb09e90e059cecaf
   gameOverWindow: {fileID: 1829165088}
 --- !u!4 &1423499414
 Transform:

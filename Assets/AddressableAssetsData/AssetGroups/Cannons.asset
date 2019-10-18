@@ -10,29 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: SpaceShips
+  m_Name: Cannons
   m_EditorClassIdentifier: 
-  m_GroupName: SpaceShips
+  m_GroupName: Cannons
   m_Data:
     m_SerializedData: []
-  m_GUID: 6c6616dfbce59d2419059bf78bc68514
+  m_GUID: 51acbaed66e8bdc43a12a19d9c8936f7
   m_SerializeEntries:
-  - m_GUID: 00420bb5cd25eac4fb09e90e059cecaf
-    m_Address: SimpleShipData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Ship
-  - m_GUID: 147407fc566122340a0e00c6510f3ee5
-    m_Address: Assets/Pawns/SpaceShips/SimpleShip/model_simpleShip.fbx
+  - m_GUID: 6e569033a499e3642a62f799e48dae8d
+    m_Address: SimpleBullet
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 5143dc24932f6ee4190782ed461123c1
-    m_Address: SimpleShip
+  - m_GUID: b430a6dc57b74144795dd09e306b6c46
+    m_Address: Assets/Props/Cannons/SimpleCannon.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fa0b5d3c0c499a34ab2aeab2ff27e602, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: cc6cdacccb77714429467704f3a282ba, type: 2}
-    - {fileID: 11400000, guid: b47f7962e2bc4af469ee0b8574ddfbc6, type: 2}
+    - {fileID: 11400000, guid: 5344d425cddbc0445bbc26565395e3fb, type: 2}
+    - {fileID: 11400000, guid: 21de9678390c8564ab5625e70de8ea3a, type: 2}

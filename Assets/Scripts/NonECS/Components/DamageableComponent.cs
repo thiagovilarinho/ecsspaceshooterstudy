@@ -13,17 +13,22 @@ namespace SimpleSpace.NonECS
         [SerializeField]
         private GameObject _deathFx = null;
 
-        private PawnData _pawnData = null;
+        private IPawnData _pawnData = null;
 
         private float _life = 0;
 
         public float Life { get { return _life; } }
 
-        public PawnData Data
+        public IPawnData Data
         {
             set { _pawnData = value; }
 
             get{ return _pawnData; }
+        }
+
+        public Transform GetTransform
+        {
+            get {return transform;}
         }
 
         private void OnEnable()
@@ -38,7 +43,7 @@ namespace SimpleSpace.NonECS
                 return;
             }
 
-            _life = _pawnData.Life;
+            _life = _pawnData.GetLife();
         }
 
         public void ApplyDamage(float ammount)
@@ -61,7 +66,7 @@ namespace SimpleSpace.NonECS
             if(_deathFx)
             {
                 PoolManager.instance.TryPool(_deathFx).
-                                    transform.position = transform.position;
+                                    transform.position = GetTransform.position;
             }
 
             if(_isPlayer)
@@ -73,7 +78,7 @@ namespace SimpleSpace.NonECS
             {
                 if(countScore)
                 {
-                    GameManager.instance.SetScore(_pawnData.ScorePoint);
+                    GameManager.instance.SetScore(_pawnData.GetScore());
                 }
 
                 PoolManager.instance.ReturnToPool(gameObject);
@@ -85,15 +90,17 @@ namespace SimpleSpace.NonECS
         {
             if(other.CompareTag(ConstantValues.playerTag))
             {
-                other.GetComponent<IDamageable>().ApplyDamage(_pawnData.DamageAmmount);
+                other.GetComponent<IDamageable>().ApplyDamage(_pawnData.GetDamageAmmount());
                 Death();
             }
 
             if (other.CompareTag(ConstantValues.enemyTag) && !_isPlayer)
             {
-                other.GetComponent<IDamageable>().ApplyDamage(_pawnData.DamageAmmount);
+                other.GetComponent<IDamageable>().ApplyDamage(_pawnData.GetDamageAmmount());
                 Death();
             }
         }
+
+
     }
 }
