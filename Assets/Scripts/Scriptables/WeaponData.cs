@@ -6,39 +6,23 @@ using UnityEngine;
 namespace SimpleSpace.Data
 {
     [CreateAssetMenu(fileName = "WeaponData", menuName = "SimpleSpace/WeaponData", order = 0)]
-    public class WeaponData : ScriptableObject, IPawnData
+    public class WeaponData : SimpleWeaponData
     {
         public GameObject Cannon;
 
         public GameObject Bullet;
 
-        public float damageAmmount = 100;
-
         public int ShootInterval = 15;
 
         private readonly GameObject[] _objects = new GameObject[2];
 
-        public float GetDamageAmmount()
-        {
-            return damageAmmount;
-        }
-
-        public float GetLife()
-        {
-            return 0;
-        }
-
-        public int GetScore()
-        {
-           return 0;
-        }
 
         /// <summary>
         /// Get the cannon or bullet
         /// </summary>
         /// <param name="i">0 for cannon or 1 for bullet </param>
         /// <returns></returns>
-        public GameObject GetObject(int i)
+        public override GameObject GetObject(int i)
         {
             int length = _objects.Length;
 
@@ -55,7 +39,7 @@ namespace SimpleSpace.Data
             return _objects[i];
         }
 
-        public void Initialize()
+        public override void Initialize()
         {
            _objects[0] = Cannon;
             _objects[1] = Bullet;

@@ -6,6 +6,8 @@ namespace SimpleSpace.NonECS
 {
     public class ShootingComponent : MonoBehaviour
     {
+        [SerializeField]
+        private DamageableComponent _myBody = null;
         private WeaponData _bulletData = null;
 
         private Transform _cannonPivot = default(Transform);
@@ -20,8 +22,19 @@ namespace SimpleSpace.NonECS
             set { _bulletData = value; }
         }
 
+        [ContextMenu("Get Body Reference")]
+        private void GetBody()
+        {
+            _myBody = GetComponentInParent<DamageableComponent>();
+        }
+
         public void Initialize()
         {
+            if(_myBody == null)
+            {
+                GetBody();
+            }
+
             _cannonPivot = transform;
 
             if (_bulletData.Cannon)
@@ -56,6 +69,7 @@ namespace SimpleSpace.NonECS
         private void Shoot()
         {
             var tempBullet = PoolManager.instance.TryGetPool<IDamageable>(_bullet);
+            tempBullet.ID = _myBody.ID;
             tempBullet.GetTransform.position = _cannonPivot.position;
             tempBullet.Data = _bulletData;
         }

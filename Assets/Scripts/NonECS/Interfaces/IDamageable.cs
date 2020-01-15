@@ -6,9 +6,10 @@ namespace SimpleSpace.NonECS
     {
         Transform GetTransform { get;}
         IPawnData Data { get; set; }
+        int ID { get; set; }
         void Initialize();
-        void ApplyDamage(float ammount);
-        void Death(bool countScore = false);
+        void ApplyDamage(float ammount,int hash = 0);
+        void Death(bool countScore = false, int hash = 0);
     }
 
 }

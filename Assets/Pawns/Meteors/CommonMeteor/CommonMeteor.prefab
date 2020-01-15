@@ -174,6 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a55821828dd1143902a3ce5ce3d055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _isPlayer: 0
   _deathFx: {fileID: 618768033832787368, guid: 05c2feeb0a4caea43b0b9877bdceb0c7, type: 3}
 --- !u!135 &4826776584706194274
@@ -184,7 +185,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6359468328316984221}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.04

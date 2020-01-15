@@ -30,7 +30,7 @@ namespace SimpleSpace.Core
         protected override void Awake()
         {
             base.Awake();
-            
+
             spaceShipData.LoadAssetAsync<ShipData>().Completed += op =>
             {
                 _loadedData = op.Result;
@@ -52,7 +52,7 @@ namespace SimpleSpace.Core
             damageableData.Data = _loadedData;
             damageableData.Initialize();
 
-            shootingComponent.Data = _loadedData.Weapon;
+            shootingComponent.Data = _loadedData.Weapon as WeaponData;
             shootingComponent.Initialize();
 
             gameState = GameStates.Running;

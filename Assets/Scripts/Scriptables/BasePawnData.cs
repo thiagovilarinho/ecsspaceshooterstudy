@@ -14,7 +14,7 @@ namespace SimpleSpace.Data
 
         protected readonly GameObject[] _objects = new GameObject[1];
 
-        public float GetDamageAmmount()
+        public virtual float GetDamageAmmount()
         {
            return 0;
         }

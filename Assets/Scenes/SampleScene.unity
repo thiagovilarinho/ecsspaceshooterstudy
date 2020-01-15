@@ -1528,7 +1528,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 118.6, y: -52}
+  m_AnchoredPosition: {x: 118.59961, y: -52}
   m_SizeDelta: {x: 153.8, y: 67.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1108130886
@@ -1784,6 +1784,8 @@ MonoBehaviour:
   gameState: 0
   spaceShipData:
     m_AssetGUID: 00420bb5cd25eac4fb09e90e059cecaf
+    m_SubObjectName: 
+  test: {fileID: 11400000, guid: 00420bb5cd25eac4fb09e90e059cecaf, type: 2}
   gameOverWindow: {fileID: 1829165088}
 --- !u!4 &1423499414
 Transform:
@@ -1989,7 +1991,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -223.2, y: -52}
+  m_AnchoredPosition: {x: -223.2002, y: -52}
   m_SizeDelta: {x: 100.1, y: 62.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1646967086
@@ -2597,10 +2599,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObjects:
   - m_AssetGUID: d116a682415a4b74b9db6241505021c9
+    m_SubObjectName: 
   - m_AssetGUID: 6e569033a499e3642a62f799e48dae8d
+    m_SubObjectName: 
   - m_AssetGUID: 05c2feeb0a4caea43b0b9877bdceb0c7
+    m_SubObjectName: 
   - m_AssetGUID: 4863840b2f34ea146a20051d20614490
+    m_SubObjectName: 
   - m_AssetGUID: 3b7bc353980d9624293f75384335d10a
+    m_SubObjectName: 
 --- !u!4 &2100920251
 Transform:
   m_ObjectHideFlags: 0

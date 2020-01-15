@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5ce95ea6bb3dd4295ea93750b73e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _myBody: {fileID: 0}
 --- !u!1 &1872351713
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5ce95ea6bb3dd4295ea93750b73e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _myBody: {fileID: 0}
 --- !u!1 &2649744599534396282
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5ce95ea6bb3dd4295ea93750b73e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _myBody: {fileID: 1634527892}
 --- !u!1 &5154489853501297936
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a55821828dd1143902a3ce5ce3d055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 1
   _isPlayer: 1
   _deathFx: {fileID: 0}
 --- !u!136 &5895303074306790335
@@ -270,7 +274,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &5154489853616050123
 PrefabInstance:
@@ -279,11 +283,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2510205510035917352}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 147407fc566122340a0e00c6510f3ee5,
+    - target: {fileID: -4804277558085293911, guid: 147407fc566122340a0e00c6510f3ee5,
         type: 3}
-      propertyPath: m_Name
-      value: model_simpleShip
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3b941965aa4a91b47b2213c57266973e, type: 2}
     - target: {fileID: -4216859302048453862, guid: 147407fc566122340a0e00c6510f3ee5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -339,16 +343,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: -1504981713932161579, guid: 147407fc566122340a0e00c6510f3ee5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3b941965aa4a91b47b2213c57266973e, type: 2}
     - target: {fileID: -2962386710679496383, guid: 147407fc566122340a0e00c6510f3ee5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3b941965aa4a91b47b2213c57266973e, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 147407fc566122340a0e00c6510f3ee5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3b941965aa4a91b47b2213c57266973e, type: 2}
+    - target: {fileID: -927199367670048503, guid: 147407fc566122340a0e00c6510f3ee5,
+        type: 3}
+      propertyPath: m_Name
+      value: model_simpleShip
+      objectReference: {fileID: 0}
     - target: {fileID: 1487866889593933239, guid: 147407fc566122340a0e00c6510f3ee5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -359,11 +368,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e5e8c4e8b9e5c1547af3935484821b96, type: 2}
-    - target: {fileID: -4804277558085293911, guid: 147407fc566122340a0e00c6510f3ee5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3b941965aa4a91b47b2213c57266973e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 147407fc566122340a0e00c6510f3ee5, type: 3}
 --- !u!4 &212471795150382289 stripped

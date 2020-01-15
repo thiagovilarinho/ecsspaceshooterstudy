@@ -6,7 +6,10 @@ using UnityEngine.AddressableAssets;
 namespace SimpleSpace.NonECS
 {
     public class DamageableComponent : MonoBehaviour, IDamageable
-    { 
+    {
+        [SerializeField]
+        private int _id = 0;
+
         [SerializeField]
         private bool _isPlayer = false;
 
@@ -17,7 +20,12 @@ namespace SimpleSpace.NonECS
 
         private float _life = 0;
 
+
+        private IDamageable _myTarget = null;
+
         public float Life { get { return _life; } }
+
+        public int ID { get { return _id; } set { _id = value; } }
 
         public IPawnData Data
         {
@@ -35,7 +43,10 @@ namespace SimpleSpace.NonECS
         {
             Initialize();
         }
-
+        private void OnDisable()
+        {
+            ID = 0;
+        }
         public void Initialize()
         {
             if(_pawnData == null)
@@ -46,8 +57,13 @@ namespace SimpleSpace.NonECS
             _life = _pawnData.GetLife();
         }
 
-        public void ApplyDamage(float ammount)
+        public void ApplyDamage(float ammount,int hash = 0)
         {
+            if(hash.Equals(ID))
+            {
+                return;
+            }
+
             _life -= ammount;
 
             if(_isPlayer)
@@ -61,8 +77,13 @@ namespace SimpleSpace.NonECS
             }
         }
 
-        public void Death(bool countScore = false)
+        public void Death(bool countScore = false, int hash = -1)
         {
+            if(hash.Equals(ID))
+            {
+                return;
+            }
+
             if(_deathFx)
             {
                 PoolManager.instance.TryPool(_deathFx).
@@ -83,21 +104,25 @@ namespace SimpleSpace.NonECS
 
                 PoolManager.instance.ReturnToPool(gameObject);
             }
+        }
 
+        private void GetTargetFromCollision(Collider target)
+        {
+            _myTarget = target.GetComponent<IDamageable>();
+            _myTarget.ApplyDamage(_pawnData.GetDamageAmmount(), ID);
+            Death(false, _myTarget.ID);
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if(other.CompareTag(ConstantValues.playerTag))
             {
-                other.GetComponent<IDamageable>().ApplyDamage(_pawnData.GetDamageAmmount());
-                Death();
+                GetTargetFromCollision(other);
             }
 
             if (other.CompareTag(ConstantValues.enemyTag) && !_isPlayer)
             {
-                other.GetComponent<IDamageable>().ApplyDamage(_pawnData.GetDamageAmmount());
-                Death();
+                GetTargetFromCollision(other);
             }
         }
 
