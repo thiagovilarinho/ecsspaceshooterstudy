@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Duplicate Asset Isolation
+  m_Name: Vfxs
   m_EditorClassIdentifier: 
-  m_GroupName: Duplicate Asset Isolation
+  m_GroupName: Vfxs
   m_Data:
     m_SerializedData: []
-  m_GUID: 0138a110366bcbf408827a13a5b0cdbe
+  m_GUID: 9bd5649ddee2dd54fbe968aab7e139c5
   m_SerializeEntries:
-  - m_GUID: 253ca7faf275ee941b112abe4fd1af6c
-    m_Address: Assets/Shaders/MatcapShader.shadergraph
+  - m_GUID: 05c2feeb0a4caea43b0b9877bdceb0c7
+    m_Address: BigExplosion_vfx
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_mainAssetType: UnityEngine.Shader, UnityEngine.CoreModule, Version=0.0.0.0,
+    m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  - m_GUID: 292f868a90c06f542b996cb1ab1f90e4
-    m_Address: Assets/Textures/Matcaps/matcap_test2.png
+  - m_GUID: 4863840b2f34ea146a20051d20614490
+    m_Address: LightExplosion_vfx
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_mainAssetType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+    m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fa0b5d3c0c499a34ab2aeab2ff27e602, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: e26f2c6c80e693e4ba98d67b27de98c7, type: 2}
-    - {fileID: 11400000, guid: eae96a6c569f6e64badb54fc00fb9c20, type: 2}
+    - {fileID: 11400000, guid: 95f04fcb45c182147a67ea5104146603, type: 2}
+    - {fileID: 11400000, guid: d35cffd1bb49def40b39d825e8660ba4, type: 2}
