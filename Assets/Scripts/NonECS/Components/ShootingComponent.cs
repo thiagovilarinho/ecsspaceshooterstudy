@@ -16,6 +16,8 @@ namespace SimpleSpace.NonECS
 
         private bool _initialized = false;
 
+        private float _shootTimer = 0f;
+
         public WeaponData Data
         {
             get { return _bulletData; }
@@ -57,11 +59,15 @@ namespace SimpleSpace.NonECS
                 return;
             }
 
+            // Acumula o tempo passado
+            _shootTimer += Time.deltaTime;
+
             if (Input.GetKey(KeyCode.F) || Input.GetMouseButton(0))
             {
-                if (Time.frameCount % _bulletData.ShootInterval == 0)
+                if (_shootTimer >= _bulletData.ShootInterval)
                 {
-                    Shoot();
+                Shoot();
+                _shootTimer = 0f; // Reseta o acumulador
                 }
             }
         }

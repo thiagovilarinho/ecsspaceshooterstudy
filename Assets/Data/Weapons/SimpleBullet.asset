@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705a623f338b75644913bead68989534, type: 3}
   m_Name: SimpleBullet
   m_EditorClassIdentifier: 
+  DamageAmmount: 100
   Cannon: {fileID: 4706047728092707719, guid: b430a6dc57b74144795dd09e306b6c46, type: 3}
   Bullet: {fileID: 5073315074516191766, guid: 6e569033a499e3642a62f799e48dae8d, type: 3}
-  damageAmmount: 100
-  ShootInterval: 15
+  ShootInterval: 0.25

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using SimpleSpace.Core;
@@ -9,7 +9,7 @@ namespace SimpleSpace.NonECS
     public class EnemiesSpawner : MonoBehaviour
     {
         [SerializeField]
-        private int _spawnInterval = 30;
+        private float _spawnInterval = 2f;
 
         [SerializeField]
         private string _enemieLabel = "Meteors";
@@ -23,6 +23,8 @@ namespace SimpleSpace.NonECS
 
         private int _randomResult = 0;
 
+        private float _spawnTimer = 0f;
+
         private void Awake()
         {
             Addressables.LoadAssetsAsync<PawnData>(_enemieLabel, op =>
@@ -34,13 +36,16 @@ namespace SimpleSpace.NonECS
 
         void Update()
         {
-            if(GameManager.instance.gameState == GameStates.Ended && !_dataLoaded)
+            if (GameManager.instance.gameState == GameStates.Ended || !_dataLoaded || _enemiesData.Count == 0)
             {
                 return;
             }
 
-            if(Time.frameCount % _spawnInterval == 0)
+            _spawnTimer += Time.deltaTime;
+            if (_spawnTimer >= _spawnInterval)
             {
+                _spawnTimer = 0f;
+
                 var tempEnemy =  PoolManager.instance.TryGetPool<IDamageable>(_enemiesData[_randomResult].Pawn);
                 tempEnemy.GetTransform.position = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
                 tempEnemy.Data = _enemiesData[_randomResult];

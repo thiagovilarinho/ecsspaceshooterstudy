@@ -12,7 +12,7 @@ namespace SimpleSpace.Data
 
         public GameObject Bullet;
 
-        public int ShootInterval = 15;
+        public float ShootInterval = 0.25f;
 
         private readonly GameObject[] _objects = new GameObject[2];
 
