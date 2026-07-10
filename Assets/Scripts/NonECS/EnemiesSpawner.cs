@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using SimpleSpace.Core;
 using SimpleSpace.Data;
+using Unity.Burst;
 
 namespace SimpleSpace.NonECS
 {
@@ -25,6 +26,8 @@ namespace SimpleSpace.NonECS
 
         private float _spawnTimer = 0f;
 
+        private int _lastSpawner = 0;
+
         private void Awake()
         {
             Addressables.LoadAssetsAsync<PawnData>(_enemieLabel, op =>
@@ -46,14 +49,31 @@ namespace SimpleSpace.NonECS
             {
                 _spawnTimer = 0f;
 
+                Spawn();
+            }
+        }
+
+        [BurstCompile]
+        void Spawn()
+        {
                 var tempEnemy =  PoolManager.instance.TryGetPool<IDamageable>(_enemiesData[_randomResult].Pawn);
-                tempEnemy.GetTransform.position = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
+                _lastSpawner++;
+               /* while (_lastSpawner == _currentSpawner)
+                {
+                    _currentSpawner = Random.Range(0, _spawnPoints.Length);
+                    
+                }*/
+               
+                if (_lastSpawner > _spawnPoints.Length) _lastSpawner = 0;
+
+                tempEnemy.GetTransform.position = _spawnPoints[_lastSpawner%_spawnPoints.Length].position;
+                tempEnemy.GetTransform.localScale = tempEnemy.GetTransform.localScale * Random.Range(0.95f,1.12f);
                 tempEnemy.Data = _enemiesData[_randomResult];
 
                 _randomResult = Random.Range(0, _enemiesData.Count);
 
                 tempEnemy.Initialize();
-            }
         }
     }
+    
 }
