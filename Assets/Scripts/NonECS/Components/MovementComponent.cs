@@ -28,7 +28,7 @@ namespace SimpleSpace.NonECS
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
             if(GameManager.instance.gameState.Equals(GameStates.Running))
             {
@@ -48,7 +48,7 @@ namespace SimpleSpace.NonECS
 
         private void Move(Vector2 dir)
         {
-            rigidyBody.velocity = (dir / Time.deltaTime) * _speed;
+            rigidyBody.linearVelocity = (dir / Time.deltaTime) * _speed;
         }
     }
 }
